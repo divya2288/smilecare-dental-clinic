@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmileCare — Modern Patient-First Dental Clinic & Wellness</title>
+  <meta name="description" content="Experience modern, gentle, and technology-guided dental care at SmileCare. Interactive symptom triage, smart appointment booking, and cosmetic dentistry." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Font Awesome 6 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS Design System -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP NOTIFICATION / STATUS BAR
+       ========================================================================== -->
+  <div class="top-bar-custom py-2 border-bottom bg-surface small d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div id="liveClinicStatus" class="d-flex align-items-center">
+        <span class="badge-pulse text-success fw-bold">● Open Now</span>
+        <span class="text-muted ms-1">| Welcoming Patients Today</span>
+      </div>
+      <div class="d-flex align-items-center gap-3 text-muted">
+        <a href="tel:9360633957" class="text-muted text-decoration-none d-inline-flex align-items-center topbar-link">
+          <i class="bi bi-telephone-fill me-1 text-primary-custom"></i> Helpline: <strong class="ms-1 text-main">9360633957</strong>
+        </a>
+        <span class="text-muted d-none d-lg-inline">|</span>
+        <span class="d-inline-flex align-items-center">
+          <i class="bi bi-geo-alt-fill me-1 text-primary-custom"></i> No. 24, Mission Street, White Town, Puducherry – 605001
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN NAVIGATION
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-xl custom-navbar sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Brand Logo -->
+      <a class="navbar-brand-custom my-0" href="#home">
+        <div class="brand-icon">
+          <i class="fa-solid fa-tooth"></i>
+        </div>
+        <span>Smile<span class="text-primary-custom">Care</span></span>
+      </a>
+
+      <!-- Navbar Links (Center Aligned, Equal Spacing, Vertically Centered) -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav align-items-center mx-auto mb-2 mb-xl-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#smilecheck">SmileCheck</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dental-score">Health Score</a></li>
+          <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="#guide">Dental Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="#journey">Care Journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Action Controls -->
+      <div class="nav-actions-group d-flex align-items-center gap-2">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <!-- My Appointments Drawer Trigger -->
+        <button type="button" class="btn btn-outline-custom btn-custom-sm d-flex align-items-center gap-2" data-bs-toggle="offcanvas" data-bs-target="#myAppointmentsDrawer" aria-controls="myAppointmentsDrawer">
+          <i class="bi bi-calendar-check"></i>
+          <span class="d-none d-sm-inline">My Bookings</span>
+          <span class="badge bg-primary text-white rounded-pill px-2 d-none" id="myAppointmentsBadge">0</span>
+        </button>
+
+        <!-- Book Appointment Primary CTA -->
+        <a href="#appointment" class="btn-custom-primary btn-custom-sm d-none d-md-inline-flex">
+          <i class="bi bi-calendar-plus"></i>
+          <span>Book Visit</span>
+        </a>
+
+        <!-- Mobile Navbar Toggler -->
+        <button class="navbar-toggler border-0 shadow-none p-1 ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <header class="hero-section" id="home">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="hero-badge">
+            <span class="badge-pulse"></span>
+            <span>Accredited Center for Digital Dentistry</span>
+          </div>
+          <h1 class="hero-title">
+            Your Journey to a <span class="text-gradient">Radiant, Healthy Smile</span> Starts Here
+          </h1>
+          <p class="hero-subtitle">
+            Experience gentle, technology-guided dentistry centered entirely around your comfort. From instant symptom triage to painless laser treatments, we make lifelong oral wellness effortless.
+          </p>
+          <div class="hero-actions">
+            <a href="#appointment" class="btn-custom-primary">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Book Appointment</span>
+            </a>
+            <a href="#smilecheck" class="btn-custom-secondary">
+              <i class="fa-solid fa-stethoscope text-primary-custom"></i>
+              <span>Try SmileCheck™ Guide</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <h4>15k+</h4>
+              <p>Happy Smiles Restored</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>99.4%</h4>
+              <p>Patient Satisfaction</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>100%</h4>
+              <p>Painless Tech Guarantee</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-media-wrapper">
+            <!-- Floating Badge 1 -->
+            <div class="floating-badge floating-badge-1">
+              <div class="floating-icon bg-primary-subtle text-primary-custom">
+                <i class="fa-solid fa-tooth"></i>
+              </div>
+              <div>
+                <h6>Digital Smile Design</h6>
+                <small>3D Scans & Laser Precision</small>
+              </div>
+            </div>
+
+            <div class="hero-img-container">
+              <img src="assets/hero_dentist.jpg" alt="Modern dental consultation at SmileCare clinic" />
+            </div>
+
+            <!-- Floating Badge 2 -->
+            <div class="floating-badge floating-badge-2">
+              <div class="floating-icon bg-secondary-subtle text-secondary-custom">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>
+                <h6>4.9 / 5.0 Rating</h6>
+                <small>3,200+ Verified Reviews</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       WHY CHOOSE US SECTION
+       ========================================================================== -->
+  <section class="section-padding bg-surface">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-solid fa-award"></i> The SmileCare Advantage
+        </span>
+        <h2 class="section-title">Patient-First Dentistry Designed for You</h2>
+        <p class="section-subtitle">
+          We have reimagined the clinical dental experience with modern amenities, zero judgment, and state-of-the-art restorative tools.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="custom-card">
+            <div class="feature-icon-box">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Painless Laser Care</h5>
+            <p class="text-muted small mb-0">
+              Minimally invasive computerized anesthesia and water-laser techniques eliminate traditional dental drills and discomfort.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="custom-card">
+            <div class="feature-icon-box">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Board-Certified Masters</h5>
+            <p class="text-muted small mb-0">
+              Our specialists hold distinguished credentials in orthodontic alignment, endodontics, and complex cosmetic restorations.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="custom-card">
+            <div class="feature-icon-box">
+              <i class="fa-solid fa-receipt"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Clear, Upfront Pricing</h5>
+            <p class="text-muted small mb-0">
+              Transparent treatment fee roadmaps before any procedure begins. Zero surprise bills, full insurance claims coordination.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="custom-card">
+            <div class="feature-icon-box">
+              <i class="fa-solid fa-shield-virus"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Spa-Like Sterile Comfort</h5>
+            <p class="text-muted small mb-0">
+              Hospital-grade surgical air purification, noise-cancelling headphones, and heated blankets create a truly calming environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       POPULAR SERVICES SECTION WITH SEARCH & FILTER
+       ========================================================================== */
+  <section class="section-padding" id="services">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-solid fa-teeth-open"></i> Clinical Specialties
+        </span>
+        <h2 class="section-title">Comprehensive Dental Services</h2>
+        <p class="section-subtitle">
+          From preventive prophylaxis to full-mouth cosmetic makeovers, discover treatments customized to your smile goals.
+        </p>
+      </div>
+
+      <!-- Real-Time Search Bar -->
+      <div class="service-search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="serviceSearchInput" placeholder="Search treatments, symptoms, or procedures..." aria-label="Search dental treatments" />
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-pills-wrapper">
+        <button type="button" class="filter-pill active" data-category="all">All Services</button>
+        <button type="button" class="filter-pill" data-category="preventive">Preventive</button>
+        <button type="button" class="filter-pill" data-category="cosmetic">Cosmetic</button>
+        <button type="button" class="filter-pill" data-category="restorative">Restorative</button>
+        <button type="button" class="filter-pill" data-category="orthodontics">Orthodontics</button>
+        <button type="button" class="filter-pill" data-category="emergency">Emergency</button>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="row g-4" id="servicesGrid">
+        <!-- Service 1 -->
+        <div class="col-md-6 col-lg-4 service-grid-col">
+          <div class="custom-card service-card" data-category="preventive">
+            <div class="service-card-meta">
+              <span class="badge bg-primary-subtle text-primary-custom fw-semibold">Preventive</span>
+              <span class="service-card-time"><i class="fa-regular fa-clock"></i> 45 mins</span>
+            </div>
+            <h5 class="fw-bold mb-2">Comprehensive Exam & Cleaning</h5>
+            <p class="text-muted small">Full-mouth oral health evaluation, low-dose digital X-rays, ultrasonic plaque removal, and fluoride enamel shield.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check"></i> 3D digital tooth & gum scan</li>
+              <li><i class="fa-solid fa-check"></i> Gentle ultrasonic tartar scaling</li>
+              <li><i class="fa-solid fa-check"></i> Oral cancer screening included</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+              <span class="service-card-price">$89</span>
+              <button type="button" class="btn-custom-secondary btn-custom-sm btn-service-book" data-service-id="routine-checkup">
+                Book Service <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-md-6 col-lg-4 service-grid-col">
+          <div class="custom-card service-card" data-category="cosmetic">
+            <div class="service-card-meta">
+              <span class="badge bg-primary-subtle text-primary-custom fw-semibold">Cosmetic</span>
+              <span class="service-card-time"><i class="fa-regular fa-clock"></i> 60 mins</span>
+            </div>
+            <h5 class="fw-bold mb-2">Laser Teeth Whitening</h5>
+            <p class="text-muted small">In-office power bleaching technology delivering up to 8 shades whiter enamel in a single session with zero tooth sensitivity.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check"></i> LED activation accelerator</li>
+              <li><i class="fa-solid fa-check"></i> Desensitizing enamel balm</li>
+              <li><i class="fa-solid fa-check"></i> Complimentary home touchup kit</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+              <span class="service-card-price">$199</span>
+              <button type="button" class="btn-custom-secondary btn-custom-sm btn-service-book" data-service-id="teeth-whitening">
+                Book Service <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-md-6 col-lg-4 service-grid-col">
+          <div class="custom-card service-card" data-category="orthodontics">
+            <div class="service-card-meta">
+              <span class="badge bg-primary-subtle text-primary-custom fw-semibold">Orthodontics</span>
+              <span class="service-card-time"><i class="fa-regular fa-clock"></i> 45 mins</span>
+            </div>
+            <h5 class="fw-bold mb-2">Clear Invisible Aligners</h5>
+            <p class="text-muted small">Discrete, removable orthodontic aligners to correct crowding, crossbites, and gaps without metal brackets or wires.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check"></i> Instant 3D digital outcome simulation</li>
+              <li><i class="fa-solid fa-check"></i> Virtually invisible custom trays</li>
+              <li><i class="fa-solid fa-check"></i> Accelerated treatment protocol</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+              <span class="service-card-price">$120</span>
+              <button type="button" class="btn-custom-secondary btn-custom-sm btn-service-book" data-service-id="clear-aligners">
+                Book Service <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-md-6 col-lg-4 service-grid-col">
+          <div class="custom-card service-card" data-category="restorative">
+            <div class="service-card-meta">
+              <span class="badge bg-primary-subtle text-primary-custom fw-semibold">Restorative</span>
+              <span class="service-card-time"><i class="fa-regular fa-clock"></i> 75 mins</span>
+            </div>
+            <h5 class="fw-bold mb-2">Porcelain Crowns & Bridges</h5>
+            <p class="text-muted small">Biocompatible all-ceramic restorations designed with CAD/CAM technology to restore chipped, cracked, or missing teeth.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check"></i> 100% metal-free porcelain</li>
+              <li><i class="fa-solid fa-check"></i> Custom color shade matching</li>
+              <li><i class="fa-solid fa-check"></i> High fracture-resistant durability</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+              <span class="service-card-price">$299</span>
+              <button type="button" class="btn-custom-secondary btn-custom-sm btn-service-book" data-service-id="dental-crowns">
+                Book Service <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-md-6 col-lg-4 service-grid-col">
+          <div class="custom-card service-card" data-category="preventive">
+            <div class="service-card-meta">
+              <span class="badge bg-primary-subtle text-primary-custom fw-semibold">Preventive</span>
+              <span class="service-card-time"><i class="fa-regular fa-clock"></i> 60 mins</span>
+            </div>
+            <h5 class="fw-bold mb-2">Periodontal Deep Scaling</h5>
+            <p class="text-muted small">Targeted subgingival root planing removing hardened calculus and stubborn bacterial pockets to reverse bleeding gums.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check"></i> Pocket depth probing calibration</li>
+              <li><i class="fa-solid fa-check"></i> Antimicrobial therapeutic rinse</li>
+              <li><i class="fa-solid fa-check"></i> Promotes gum reattachment</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+              <span class="service-card-price">$149</span>
+              <button type="button" class="btn-custom-secondary btn-custom-sm btn-service-book" data-service-id="deep-cleaning">
+                Book Service <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-md-6 col-lg-4 service-grid-col">
+          <div class="custom-card service-card" data-category="emergency">
+            <div class="service-card-meta">
+              <span class="badge bg-danger-subtle text-danger fw-semibold">Emergency</span>
+              <span class="service-card-time"><i class="fa-regular fa-clock"></i> 30 mins</span>
+            </div>
+            <h5 class="fw-bold mb-2">Same-Day Emergency Relief</h5>
+            <p class="text-muted small">Immediate priority access for severe pain, dental trauma, knocked-out teeth, or acute swelling with same-day appointments.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check"></i> Instant diagnostic X-ray</li>
+              <li><i class="fa-solid fa-check"></i> Immediate pain cessation therapy</li>
+              <li><i class="fa-solid fa-check"></i> Stabilize broken or loose teeth</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+              <span class="service-card-price">$95</span>
+              <button type="button" class="btn-custom-secondary btn-custom-sm btn-service-book" data-service-id="emergency-care">
+                Book Service <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       UNIQUE FEATURE 1: SMILECHECK™ SYMPTOM GUIDE
+       ========================================================================== -->
+  <section class="section-padding bg-surface" id="smilecheck">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-solid fa-stethoscope"></i> Unique Feature 1
+        </span>
+        <h2 class="section-title">SmileCheck™ Interactive Symptom Guide</h2>
+        <p class="section-subtitle">
+          Unsure what your oral discomfort means? Select your symptom below to receive personalized educational guidance and clinical service recommendations.
+        </p>
+      </div>
+
+      <div class="smilecheck-container mx-auto" style="max-width: 900px;">
+        <h5 class="fw-bold mb-3 text-center">Step 1: Select Your Primary Symptom</h5>
+
+        <div class="symptom-grid">
+          <button type="button" class="symptom-btn" data-symptom="tooth-pain">
+            <i class="fa-solid fa-tooth"></i>
+            <span>Tooth Pain</span>
+          </button>
+
+          <button type="button" class="symptom-btn" data-symptom="gum-bleeding">
+            <i class="fa-solid fa-droplet"></i>
+            <span>Gum Bleeding</span>
+          </button>
+
+          <button type="button" class="symptom-btn" data-symptom="tooth-sensitivity">
+            <i class="fa-solid fa-snowflake"></i>
+            <span>Sensitivity</span>
+          </button>
+
+          <button type="button" class="symptom-btn" data-symptom="broken-tooth">
+            <i class="fa-solid fa-burst"></i>
+            <span>Broken Tooth</span>
+          </button>
+
+          <button type="button" class="symptom-btn" data-symptom="bad-breath">
+            <i class="fa-solid fa-wind"></i>
+            <span>Bad Breath</span>
+          </button>
+
+          <button type="button" class="symptom-btn" data-symptom="swelling">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>Oral Swelling</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Follow-up Container -->
+        <div id="smilecheckFollowup" class="d-none"></div>
+
+        <!-- Dynamic Results Container -->
+        <div id="smilecheckResult" class="d-none"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       UNIQUE FEATURE 2: DENTAL HEALTH SCORE QUESTIONNAIRE
+       ========================================================================== -->
+  <section class="section-padding" id="dental-score">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-solid fa-chart-line"></i> Unique Feature 2
+        </span>
+        <h2 class="section-title">Dental Health Score Calculator</h2>
+        <p class="section-subtitle">
+          Evaluate your daily brushing, flossing, and checkup consistency to receive an educational dental wellness score and tailored care suggestions.
+        </p>
+      </div>
+
+      <div class="score-calculator-card mx-auto" style="max-width: 760px;">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="badge bg-primary-subtle text-primary-custom fw-semibold" id="quizQuestionNum">Question 1 of 5</span>
+          <span class="text-muted small">Wellness Habit Assessment</span>
+        </div>
+
+        <div class="quiz-progress-bar-container">
+          <div class="quiz-progress-fill" id="quizProgressBar"></div>
+        </div>
+
+        <!-- Dynamic Question Step Container -->
+        <div id="quizStepContainer"></div>
+
+        <!-- Dynamic Results Container -->
+        <div id="quizResultContainer" class="d-none"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       UNIQUE FEATURE 3: SMART MULTI-STEP APPOINTMENT BOOKING
+       ========================================================================== -->
+  <section class="section-padding bg-surface" id="appointment">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-regular fa-calendar-check"></i> Unique Feature 3
+        </span>
+        <h2 class="section-title">Smart Multi-Step Appointment Booking</h2>
+        <p class="section-subtitle">
+          Schedule your dental visit in four quick steps. Real-time slot availability, instant confirmation ID, and local browser persistence.
+        </p>
+      </div>
+
+      <div class="custom-card mx-auto" id="bookingWizardCard" style="max-width: 860px; padding: 2.5rem;">
+        <!-- Stepper Indicators -->
+        <div class="booking-stepper">
+          <div class="booking-step active" id="stepIndicator1">
+            <div class="step-circle">1</div>
+            <span class="step-title">Service</span>
+          </div>
+          <div class="booking-step" id="stepIndicator2">
+            <div class="step-circle">2</div>
+            <span class="step-title">Doctor & Date</span>
+          </div>
+          <div class="booking-step" id="stepIndicator3">
+            <div class="step-circle">3</div>
+            <span class="step-title">Time Slot</span>
+          </div>
+          <div class="booking-step" id="stepIndicator4">
+            <div class="step-circle">4</div>
+            <span class="step-title">Patient Info</span>
+          </div>
+        </div>
+
+        <!-- STEP 1: SELECT SERVICE -->
+        <div class="step-pane active" id="stepPane1">
+          <h5 class="fw-bold mb-2">Step 1: Choose Your Dental Treatment</h5>
+          <p class="text-muted small mb-4">Select the clinical procedure you wish to book:</p>
+          <div class="row g-3" id="bookingServicesGrid"></div>
+        </div>
+
+        <!-- STEP 2: CHOOSE DOCTOR & DATE -->
+        <div class="step-pane" id="stepPane2">
+          <h5 class="fw-bold mb-2">Step 2: Choose Specialist & Date</h5>
+          <p class="text-muted small mb-4">Select your preferred dentist or opt for the first available doctor:</p>
+          <div class="row g-3 mb-4" id="bookingDoctorsGrid"></div>
+
+          <div class="bg-surface p-3 rounded-3 border">
+            <label for="bookingDateInput" class="form-label">
+              <i class="fa-regular fa-calendar me-1 text-primary-custom"></i> Select Appointment Date:
+            </label>
+            <input type="date" class="form-control form-control-custom" id="bookingDateInput" />
+            <small class="text-muted mt-1 d-block">We are open Monday through Sunday. Past dates are automatically disabled.</small>
+          </div>
+        </div>
+
+        <!-- STEP 3: SELECT TIME SLOT -->
+        <div class="step-pane" id="stepPane3">
+          <h5 class="fw-bold mb-2">Step 3: Select Available Time Slot</h5>
+          <p class="text-muted small mb-4">All times displayed are in local clinic timezone:</p>
+          <div class="row g-2" id="bookingTimeSlotsGrid"></div>
+        </div>
+
+        <!-- STEP 4: PATIENT DETAILS -->
+        <div class="step-pane" id="stepPane4">
+          <h5 class="fw-bold mb-2">Step 4: Enter Patient Details</h5>
+          <p class="text-muted small mb-4">Please provide accurate contact info for appointment confirmations:</p>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="patientNameInput" class="form-label">Full Name *</label>
+              <input type="text" class="form-control form-control-custom" id="patientNameInput" placeholder="e.g. Eleanor Vance" required />
+            </div>
+            <div class="col-md-6">
+              <label for="patientPhoneInput" class="form-label">Phone Number *</label>
+              <input type="tel" class="form-control form-control-custom" id="patientPhoneInput" placeholder="(555) 000-1234" required />
+            </div>
+            <div class="col-12">
+              <label for="patientEmailInput" class="form-label">Email Address *</label>
+              <input type="email" class="form-control form-control-custom" id="patientEmailInput" placeholder="eleanor@example.com" required />
+            </div>
+            <div class="col-12">
+              <label for="patientNotesInput" class="form-label">Dental Concerns or Special Requests (Optional)</label>
+              <textarea class="form-control form-control-custom" id="patientNotesInput" rows="2" placeholder="e.g. Slight dental anxiety, sensitive front teeth..."></textarea>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="patientFirstTimeCheck" checked />
+                <label class="form-check-label small text-muted" for="patientFirstTimeCheck">
+                  This is my first time visiting SmileCare Dental Clinic.
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stepper Action Buttons -->
+        <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+          <button type="button" class="btn-custom-secondary btn-custom-sm d-none" id="bookingPrevBtn">
+            <i class="fa-solid fa-arrow-left me-1"></i> Back
+          </button>
+          <button type="button" class="btn-custom-primary btn-custom-sm ms-auto" id="bookingNextBtn">
+            Continue <i class="fa-solid fa-arrow-right ms-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       UNIQUE FEATURE 4: INTERACTIVE DENTAL ANATOMY GUIDE
+       ========================================================================== -->
+  <section class="section-padding" id="guide">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-solid fa-book-medical"></i> Unique Feature 4
+        </span>
+        <h2 class="section-title">Interactive Dental Anatomy Guide</h2>
+        <p class="section-subtitle">
+          Explore the cross-section layers of a human tooth. Click any anatomical zone or button to understand its biological function and prevention essentials.
+        </p>
+      </div>
+
+      <div class="tooth-guide-wrapper">
+        <div class="row align-items-center gy-4">
+          <!-- Interactive SVG Diagram Column -->
+          <div class="col-lg-5">
+            <div class="tooth-interactive-svg-box text-center">
+              <svg viewBox="0 0 320 400" width="100%" height="360" xmlns="http://www.w3.org/2000/svg" style="max-width: 320px;">
+                <defs>
+                  <linearGradient id="enamelGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#f8fafc" />
+                    <stop offset="100%" stop-color="#cbd5e1" />
+                  </linearGradient>
+                  <linearGradient id="dentinGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#fef08a" />
+                    <stop offset="100%" stop-color="#fde047" />
+                  </linearGradient>
+                  <linearGradient id="pulpGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#f87171" />
+                    <stop offset="100%" stop-color="#ef4444" />
+                  </linearGradient>
+                  <linearGradient id="gumGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#fda4af" />
+                    <stop offset="100%" stop-color="#fb7185" />
+                  </linearGradient>
+                  <linearGradient id="boneGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#e2e8f0" />
+                    <stop offset="100%" stop-color="#94a3b8" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Bone & Gum Background -->
+                <path class="tooth-part" data-part="gums" d="M 20,220 C 60,190 100,230 160,210 C 220,230 260,190 300,220 L 300,380 L 20,380 Z" fill="url(#gumGrad)" opacity="0.85" stroke="#f43f5e" stroke-width="2" />
+
+                <!-- Root & Jaw Bone Base -->
+                <path class="tooth-part" data-part="root" d="M 90,200 L 95,330 C 105,360 120,360 125,320 L 140,240 L 180,240 L 195,320 C 200,360 215,360 225,330 L 230,200 Z" fill="#e2e8f0" stroke="#64748b" stroke-width="3" />
+
+                <!-- Tooth Outer Enamel Cap (Crown) -->
+                <path class="tooth-part" data-part="enamel" d="M 60,190 C 40,110 70,30 160,30 C 250,30 280,110 260,190 C 240,210 220,210 200,200 C 180,205 140,205 120,200 C 100,210 80,210 60,190 Z" fill="url(#enamelGrad)" stroke="#0284c7" stroke-width="3.5" />
+
+                <!-- Dentin Inner Layer -->
+                <path class="tooth-part" data-part="dentin" d="M 85,180 C 70,120 90,60 160,60 C 230,60 250,120 235,180 C 215,220 210,310 205,310 C 200,270 185,220 160,220 C 135,220 120,270 115,310 C 110,310 105,220 85,180 Z" fill="url(#dentinGrad)" stroke="#eab308" stroke-width="2.5" />
+
+                <!-- Pulp Chamber & Root Canals -->
+                <path class="tooth-part" data-part="pulp" d="M 130,150 C 120,115 130,95 160,95 C 190,95 200,115 190,150 C 185,175 190,290 185,290 C 180,250 170,190 160,190 C 150,190 140,250 135,290 C 130,290 135,175 130,150 Z" fill="url(#pulpGrad)" stroke="#dc2626" stroke-width="2" />
+
+                <!-- Pin Markers -->
+                <circle cx="160" cy="48" r="6" fill="#0284c7" class="tooth-part" data-part="enamel" />
+                <circle cx="160" cy="78" r="6" fill="#ca8a04" class="tooth-part" data-part="dentin" />
+                <circle cx="160" cy="130" r="6" fill="#dc2626" class="tooth-part" data-part="pulp" />
+                <circle cx="50" cy="240" r="6" fill="#e11d48" class="tooth-part" data-part="gums" />
+                <circle cx="115" cy="330" r="6" fill="#475569" class="tooth-part" data-part="root" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Educational Details Column -->
+          <div class="col-lg-7">
+            <!-- Nav Pills to toggle anatomy -->
+            <div class="anatomy-nav-pills">
+              <button type="button" class="anatomy-pill active" data-part="enamel">1. Enamel Shield</button>
+              <button type="button" class="anatomy-pill" data-part="dentin">2. Dentin Matrix</button>
+              <button type="button" class="anatomy-pill" data-part="pulp">3. Living Pulp</button>
+              <button type="button" class="anatomy-pill" data-part="gums">4. Gingiva (Gums)</button>
+              <button type="button" class="anatomy-pill" data-part="root">5. Root & Bone</button>
+            </div>
+
+            <!-- Dynamic Info Panel -->
+            <div class="anatomy-info-panel" id="anatomyInfoPanel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       UNIQUE FEATURE 5: VISUAL DENTAL JOURNEY TRACKER
+       ========================================================================== -->
+  <section class="section-padding bg-surface" id="journey">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-solid fa-route"></i> Unique Feature 5
+        </span>
+        <h2 class="section-title">Visual Dental Treatment Journey</h2>
+        <p class="section-subtitle">
+          Transparent, step-by-step patient care from initial welcome consultation to lifelong radiant confidence.
+        </p>
+      </div>
+
+      <div class="journey-container">
+        <div class="journey-track">
+          <div class="journey-track-progress" id="journeyTrackProgress"></div>
+
+          <div class="journey-node active" data-step="1">
+            <div class="journey-node-icon"><i class="fa-solid fa-comments"></i></div>
+            <h6>1. Consult</h6>
+            <small>Goals & History</small>
+          </div>
+
+          <div class="journey-node" data-step="2">
+            <div class="journey-node-icon"><i class="fa-solid fa-x-ray"></i></div>
+            <h6>2. Examination</h6>
+            <small>3D Diagnostics</small>
+          </div>
+
+          <div class="journey-node" data-step="3">
+            <div class="journey-node-icon"><i class="fa-solid fa-tooth"></i></div>
+            <h6>3. Treatment</h6>
+            <small>Gentle Care</small>
+          </div>
+
+          <div class="journey-node" data-step="4">
+            <div class="journey-node-icon"><i class="fa-solid fa-notes-medical"></i></div>
+            <h6>4. Follow-up</h6>
+            <small>Bite & Polish</small>
+          </div>
+
+          <div class="journey-node" data-step="5">
+            <div class="journey-node-icon"><i class="fa-solid fa-face-smile-beam"></i></div>
+            <h6>5. Completed</h6>
+            <small>Lifelong Smile</small>
+          </div>
+        </div>
+
+        <div class="journey-detail-card mx-auto max-w-800" id="journeyDetailCard" style="max-width: 820px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DOCTORS SECTION
+       ========================================================================== -->
+  <section class="section-padding" id="doctors">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-solid fa-user-doctor"></i> Medical Experts
+        </span>
+        <h2 class="section-title">Meet Our Dedicated Dentists</h2>
+        <p class="section-subtitle">
+          Passionate clinicians with advanced hospital residencies and a gentle touch committed to anxiety-free care.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Doctor 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="doctor-card">
+            <div class="doctor-img-box">
+              <img src="assets/doctor_sarah.jpg" alt="Dr. Sarah Mitchell, DDS" />
+              <span class="doctor-badge-floating">14+ Yrs Exp</span>
+            </div>
+            <div class="doctor-content">
+              <div>
+                <h5 class="fw-bold mb-1">Dr. Sarah Mitchell, DDS</h5>
+                <p class="text-primary-custom fw-semibold small mb-2">Lead Cosmetic & Restorative Dentist</p>
+                <p class="text-muted small mb-3">
+                  Fellow of the American Academy of Cosmetic Dentistry. Renowned for natural porcelain veneers and smile transformations.
+                </p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-calendar-days me-1"></i> Mon, Wed, Fri</span>
+                <a href="#appointment" class="btn-custom-secondary btn-custom-sm">
+                  Book Consult <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="doctor-card">
+            <div class="doctor-img-box">
+              <img src="assets/doctor_david.jpg" alt="Dr. David Chen, DMD" />
+              <span class="doctor-badge-floating">11+ Yrs Exp</span>
+            </div>
+            <div class="doctor-content">
+              <div>
+                <h5 class="fw-bold mb-1">Dr. David Chen, DMD</h5>
+                <p class="text-primary-custom fw-semibold small mb-2">Specialist Orthodontist & Clear Aligners</p>
+                <p class="text-muted small mb-3">
+                  Pioneer in 3D digital clear aligner treatment and pediatric bite correction. Committed to gentle, non-extraction methods.
+                </p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-calendar-days me-1"></i> Tue, Thu, Sat</span>
+                <a href="#appointment" class="btn-custom-secondary btn-custom-sm">
+                  Book Consult <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="doctor-card">
+            <div class="doctor-img-box">
+              <img src="assets/doctor_elena.jpg" alt="Dr. Elena Rostova, DDS" />
+              <span class="doctor-badge-floating">12+ Yrs Exp</span>
+            </div>
+            <div class="doctor-content">
+              <div>
+                <h5 class="fw-bold mb-1">Dr. Elena Rostova, DDS</h5>
+                <p class="text-primary-custom fw-semibold small mb-2">Pediatric & Implant Specialist</p>
+                <p class="text-muted small mb-3">
+                  Double board-certified in painless pediatric dentistry and biocompatible titanium/zirconia dental implantology.
+                </p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-calendar-days me-1"></i> Mon, Thu, Sun</span>
+                <a href="#appointment" class="btn-custom-secondary btn-custom-sm">
+                  Book Consult <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PATIENT TESTIMONIALS CAROUSEL
+       ========================================================================== -->
+  <section class="section-padding bg-surface">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-pill">
+          <i class="fa-solid fa-heart"></i> Patient Testimonials
+        </span>
+        <h2 class="section-title">Loved by Over 15,000 Happy Smiles</h2>
+        <p class="section-subtitle">
+          Real reviews from real patients who overcame dental anxiety and discovered their dream smiles.
+        </p>
+      </div>
+
+      <div class="mx-auto" style="max-width: 780px;">
+        <div id="testimonialCarouselContainer"></div>
+
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <button type="button" class="btn-custom-secondary btn-custom-sm" id="prevTestimonial" aria-label="Previous Testimonial">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button type="button" class="btn-custom-secondary btn-custom-sm" id="nextTestimonial" aria-label="Next Testimonial">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DENTAL HEALTH TIPS & ABOUT SECTION
+       ========================================================================== -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <span class="badge-pill mb-3">
+            <i class="fa-solid fa-lightbulb"></i> Daily Wellness Habits
+          </span>
+          <h2 class="section-title mb-3">Evidence-Based Dental Health Tips</h2>
+          <p class="text-muted mb-4">
+            Brushing is only the starting point. Our clinical hygienists recommend integrating these four golden rules into your daily routine to maintain resilient enamel and clean gum tissue.
+          </p>
+
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="custom-card p-3">
+                <i class="fa-solid fa-stopwatch text-primary-custom fs-4 mb-2"></i>
+                <h6 class="fw-bold mb-1">The 2x2 Minute Rule</h6>
+                <p class="text-muted small mb-0">Brush for a full 120 seconds twice daily using light circular strokes with a soft head.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="custom-card p-3">
+                <i class="fa-solid fa-layer-group text-secondary-custom fs-4 mb-2"></i>
+                <h6 class="fw-bold mb-1">Floss Before Brushing</h6>
+                <p class="text-muted small mb-0">Dislodge interdental plaque first so fluoride toothpaste can coat the newly exposed contact points.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="custom-card p-3">
+                <i class="fa-solid fa-glass-water text-primary-custom fs-4 mb-2"></i>
+                <h6 class="fw-bold mb-1">Wait After Acidic Meals</h6>
+                <p class="text-muted small mb-0">Acid temporarily softens enamel. Wait 30 minutes before brushing; rinse with plain water immediately.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="custom-card p-3">
+                <i class="fa-solid fa-shield-halved text-secondary-custom fs-4 mb-2"></i>
+                <h6 class="fw-bold mb-1">Tongue Hygiene</h6>
+                <p class="text-muted small mb-0">Over 80% of anaerobic odor-causing bacteria reside on the posterior tongue. Use a stainless scraper daily.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="custom-card bg-surface p-4 p-md-5">
+            <h4 class="fw-bold mb-3">Frequently Asked Questions</h4>
+            <div class="accordion custom-accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                    Does professional ultrasonic cleaning hurt?
+                  </button>
+                </h2>
+                <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Not at all! Our ultrasonic scalers use gentle high-frequency vibrations coupled with warm water mist to remove calculus effortlessly without scraping or sharp discomfort.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                    What if I have severe dental anxiety or fear?
+                  </button>
+                </h2>
+                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    We specialize in anxiety-free dentistry. We offer computerized painless numbing, calming aromatherapy, noise-canceling headphones, and a "stop signal" policy whenever you need a breather.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                    How long do laser teeth whitening results last?
+                  </button>
+                </h2>
+                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    With routine home hygiene and avoiding heavy staining agents (tobacco, dark coffee), clinical results typically last between 12 to 24 months. We also provide custom take-home touchup trays!
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                    Do you accept dental insurance & flexible payments?
+                  </button>
+                </h2>
+                <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Yes! We are in-network with Delta Dental, Cigna, MetLife, Aetna, and Guardian. For uninsured patients, we offer interest-free in-house monthly payment memberships.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & CLINIC HOURS
+       ========================================================================== -->
+  <section class="section-padding bg-surface" id="contact">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="contact-info-card">
+            <div>
+              <h3 class="fw-bold mb-2">Visit SmileCare Clinic</h3>
+              <p class="mb-4 text-white-50 small">
+                Get in touch with our clinic administration for personalized consultations, appointments, and patient care guidance.
+              </p>
+
+              <!-- Name / Primary Contact (Bootstrap Icon) -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-person-badge-fill"></i></div>
+                <div>
+                  <h6 class="fw-bold mb-1 text-white-50 small text-uppercase">Clinic Coordinator</h6>
+                  <p class="mb-0 text-white fw-bold fs-5">Divyalakshmi K</p>
+                  <small class="text-white-50">Primary Patient Services Lead</small>
+                </div>
+              </div>
+
+              <!-- Clinic Address (Bootstrap Icon) -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <div>
+                  <h6 class="fw-bold mb-1 text-white-50 small text-uppercase">Clinic Address</h6>
+                  <address class="mb-0 text-white small fw-medium" style="font-style: normal; line-height: 1.55;">
+                    No. 24, Mission Street, White Town,<br />Puducherry – 605001
+                  </address>
+                </div>
+              </div>
+
+              <!-- Phone Number (clickable tel:, Bootstrap Icon) -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+                <div>
+                  <h6 class="fw-bold mb-1 text-white-50 small text-uppercase">Telephone & Helpline</h6>
+                  <a href="tel:9360633957" class="text-white text-decoration-none fw-bold fs-6 d-inline-flex align-items-center gap-2 contact-link">
+                    <span>9360633957</span>
+                    <i class="bi bi-box-arrow-up-right small text-white-50" style="font-size: 0.75rem;"></i>
+                  </a>
+                  <span class="d-block text-white-50 small mt-1">Direct Call Helpline</span>
+                </div>
+              </div>
+
+              <!-- Email (clickable mailto:, Bootstrap Icon) -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+                <div>
+                  <h6 class="fw-bold mb-1 text-white-50 small text-uppercase">Email Inquiries</h6>
+                  <a href="mailto:k.divyalakshmi22@gmail.com" class="text-white text-decoration-none fw-bold small d-inline-flex align-items-center gap-2 contact-link text-break">
+                    <span>k.divyalakshmi22@gmail.com</span>
+                    <i class="bi bi-box-arrow-up-right small text-white-50" style="font-size: 0.75rem;"></i>
+                  </a>
+                  <span class="d-block text-white-50 small mt-1">Priority Front Desk Inbox</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-top border-white-50 mt-4">
+              <h6 class="fw-bold mb-2 small text-uppercase text-white"><i class="bi bi-clock-fill me-1"></i> Operating Hours</h6>
+              <div class="d-flex justify-content-between small text-white-50 mb-1">
+                <span>Monday - Friday:</span>
+                <span class="fw-bold text-white">8:00 AM - 8:00 PM</span>
+              </div>
+              <div class="d-flex justify-content-between small text-white-50 mb-1">
+                <span>Saturday:</span>
+                <span class="fw-bold text-white">8:00 AM - 6:00 PM</span>
+              </div>
+              <div class="d-flex justify-content-between small text-white-50">
+                <span>Sunday (Emergency Only):</span>
+                <span class="fw-bold text-white">9:00 AM - 2:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="custom-card p-4 p-md-5">
+            <h3 class="fw-bold mb-2">Send Us a Direct Message</h3>
+            <p class="text-muted small mb-4">Have questions about a treatment or need insurance guidance? Our front desk team replies within 2 hours.</p>
+
+            <form id="clinicContactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="contactName" class="form-label">Your Name *</label>
+                  <input type="text" class="form-control form-control-custom" id="contactName" placeholder="Eleanor Vance" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="contactEmail" class="form-label">Email Address *</label>
+                  <input type="email" class="form-control form-control-custom" id="contactEmail" placeholder="eleanor@example.com" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="contactPhone" class="form-label">Phone Number (Optional)</label>
+                  <input type="tel" class="form-control form-control-custom" id="contactPhone" placeholder="(555) 000-1234" />
+                </div>
+                <div class="col-md-6">
+                  <label for="contactSubject" class="form-label">Topic of Interest</label>
+                  <select class="form-select form-control-custom" id="contactSubject">
+                    <option selected>General Inquiry</option>
+                    <option>Cosmetic Smile Consultation</option>
+                    <option>Insurance Coverage Check</option>
+                    <option>Dental Fear & Anxiety Assistance</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="contactMessage" class="form-label">Your Message *</label>
+                  <textarea class="form-control form-control-custom" id="contactMessage" rows="4" placeholder="How can our clinical team support your smile today?" required></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn-custom-primary w-100">
+                    <i class="fa-solid fa-paper-plane me-1"></i> Send Patient Inquiry
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="navbar-brand-custom mb-3">
+            <div class="brand-icon">
+              <i class="fa-solid fa-tooth"></i>
+            </div>
+            <span>Smile<span class="text-primary-custom">Care</span></span>
+          </div>
+          <p class="text-muted small mb-4">
+            SmileCare is an accredited digital dental clinic focused on patient comfort, minimally-invasive restorative procedures, and proactive lifelong oral wellness.
+          </p>
+          <div class="social-links">
+            <a href="#home" class="social-icon-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#home" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#home" class="social-icon-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#home" class="social-icon-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#smilecheck">SmileCheck™</a></li>
+            <li><a href="#dental-score">Health Score</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="footer-title">Interactive</h6>
+          <ul class="footer-links">
+            <li><a href="#guide">Dental Guide</a></li>
+            <li><a href="#journey">Care Journey</a></li>
+            <li><a href="#appointment">Book Visit</a></li>
+            <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#myAppointmentsDrawer">My Bookings</a></li>
+            <li><a href="#about">Health Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h6 class="footer-title">Emergency Dental Hotline</h6>
+          <div class="p-3 rounded-3 bg-card border mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <div class="feature-icon-box m-0 bg-danger-subtle text-danger" style="width: 44px; height: 44px; font-size: 1.2rem;">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <span class="d-block small text-muted">24/7 Dental Trauma Line:</span>
+                <strong class="fs-5 text-main">(800) 555-SMILE</strong>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted d-block">
+            Immediate same-day triage available for fractures, severe throbbing pain, and dental trauma.
+          </small>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="text-muted small mb-0">
+          © 2026 SmileCare Dental Clinic. All rights reserved. Built with modern patient-first frontend architecture.
+        </p>
+        <div class="d-flex gap-3 small text-muted">
+          <span>Privacy Policy</span>
+          <span>•</span>
+          <span>Terms of Care</span>
+          <span>•</span>
+          <span>HIPAA Compliance Notice</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       "MY APPOINTMENTS" OFFCANVAS DRAWER (LOCALSTORAGE)
+       ========================================================================== -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="myAppointmentsDrawer" aria-labelledby="myAppointmentsDrawerLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="fa-regular fa-calendar-check text-primary-custom fs-5"></i>
+        <h5 class="offcanvas-title fw-bold" id="myAppointmentsDrawerLabel">My Scheduled Bookings</h5>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="text-muted small mb-3">
+        Appointments saved in your current browser session. You can manage or cancel visits at any time.
+      </p>
+      <div id="myAppointmentsList">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container-custom"></div>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Application Logic JS -->
+  <script src="script.js"></script>
+</body>
+</html>
